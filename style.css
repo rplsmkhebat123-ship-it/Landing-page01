@@ -1,0 +1,265 @@
+/* ===== Variabel warna & font ===== */
+:root {
+  --latar: #0075fa5b;
+  --kartu: #ffffff;
+  --teks: #22262e;
+  --teks-lembut: #5d6572;
+  --utama: #1f3a5f;
+  --aksen: #0084ff;
+  --garis: #e3ddd2;
+  --sisi-latar: #1f3a5f;
+  --sisi-teks: #f6f3ee;
+  --font-judul: "Young Serif", Georgia, serif;
+  --font-isi: "Instrument Sans", system-ui, sans-serif;
+}
+
+/* ===== Reset dasar ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-isi);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--teks);
+  background: var(--latar);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-judul);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+a {
+  color: inherit;
+}
+
+/* ===== Layout utama ===== */
+.halaman {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  min-height: 100vh;
+}
+
+/* ===== Sidebar ===== */
+.sisi {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+  padding: 3rem 1.5rem;
+  background: var(--sisi-latar);
+  color: var(--sisi-teks);
+}
+
+.foto {
+  width: 130px;
+  height: 130px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--aksen);
+  color: #fff;
+  font-family: var(--font-judul);
+  font-size: 1.6rem;
+  border: 4px solid rgba(10, 0, 0, 0.25);
+}
+
+.sisi h1 {
+  font-size: 1.5rem;
+}
+
+.peran {
+  color: #c9d3e0;
+  font-size: 0.95rem;
+}
+
+.sisi nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.sisi nav a {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+
+.sisi nav a:hover,
+.sisi nav a:focus-visible {
+  background: var(--aksen);
+  color: #fff;
+}
+
+/* ===== Konten utama ===== */
+.isi {
+  width: 100%;
+  max-width: 780px;
+  padding: 3rem 2.5rem;
+}
+
+section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: var(--kartu);
+  border: 1px solid var(--garis);
+  border-radius: 14px;
+  scroll-margin-top: 1.5rem;
+}
+
+section h2 {
+  position: relative;
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  font-size: 1.7rem;
+  color: var(--utama);
+}
+
+section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 48px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--aksen);
+}
+
+section p + p {
+  margin-top: 0.8rem;
+}
+
+/* ===== Keahlian (label) ===== */
+.label {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+}
+
+.label li {
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  background: #0164e6;
+  color: var(--utama);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+/* ===== Proyek ===== */
+.daftar-proyek {
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+}
+
+.daftar-proyek li {
+  padding: 1.2rem 1.4rem;
+  border-left: 4px solid var(--aksen);
+  border-radius: 8px;
+  background: var(--latar);
+}
+
+.daftar-proyek h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1.15rem;
+  color: var(--utama);
+}
+
+.daftar-proyek p {
+  color: var(--teks-lembut);
+}
+
+.tahun {
+  display: inline-block;
+  margin-top: 0.6rem;
+  padding: 0.1rem 0.7rem;
+  border-radius: 999px;
+  background: var(--utama);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* ===== Kontak ===== */
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 8px;
+  background: var(--aksen);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  word-break: break-all;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--utama);
+  transform: translateY(-2px);
+}
+
+.sosial {
+  margin-top: 1rem;
+  color: var(--teks-lembut);
+}
+
+/* ===== Footer ===== */
+footer {
+  padding-top: 1rem;
+  text-align: center;
+  color: var(--teks-lembut);
+  font-size: 0.9rem;
+}
+
+/* ===== Responsif (tablet & HP) ===== */
+@media (max-width: 800px) {
+  .halaman {
+    grid-template-columns: 1fr;
+  }
+
+  .sisi {
+    position: static;
+    height: auto;
+    padding: 2rem 1.25rem;
+  }
+
+  .sisi nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .sisi nav a {
+    padding: 0.5rem 0.9rem;
+  }
+
+  .isi {
+    padding: 1.5rem 1rem;
+  }
+
+  section {
+    padding: 1.4rem;
+  }
+}
